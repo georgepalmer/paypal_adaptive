@@ -91,6 +91,7 @@ module PaypalAdaptive
       http = Net::HTTP.new(url.host, 443)
       http.use_ssl = true
       http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+      http.ssl_version = :TLSv1_2
 
       if @api_cert_file
         cert = File.read(@api_cert_file)
